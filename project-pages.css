@@ -26,7 +26,7 @@
 .case-fact-value { margin: 0; font-size: 15px; line-height: 1.5; }
 .case-section { display: grid; grid-template-columns: .7fr 1.3fr; gap: 7%; padding: 70px 0; border-bottom: 1px solid var(--line); }
 .case-section-index { margin: 8px 0 0; }
-.case-section-content { max-width: 780px; }
+.case-section-content { min-width: 0; max-width: 780px; }
 .case-section h2 { margin: 0 0 18px; font-size: clamp(27px, 3.6vw, 46px); font-weight: 600; line-height: 1; }
 .case-section p { margin: 0; color: #625d62; font-size: 16px; line-height: 1.75; }
 .case-section p + p { margin-top: 15px; }
@@ -43,6 +43,11 @@
 .case-pagination a { display: flex; flex-direction: column; gap: 6px; font-size: 14px; }
 .case-pagination small { color: var(--muted); font: 9px var(--mono); }
 
+@media (max-width: 1024px) {
+  .case-point-grid { grid-template-columns: 1fr; gap: 16px; }
+  .case-point { min-height: 0; }
+}
+
 @media (max-width: 800px) {
   .case-page { padding-top: 26px; padding-bottom: 76px; }
   .case-heading { padding-top: 48px; }
@@ -58,7 +63,7 @@
   .case-page { padding-top: 18px; padding-bottom: 56px; }
   .case-heading { padding-top: 38px; }
   .case-kicker, .case-fact-label, .case-section-index { font-size: 9px; }
-  .case-heading h1 { font-size: clamp(44px, 11.8vw, 66px); }
+  .case-heading h1 { font-size: clamp(38px, 10.8vw, 60px); overflow-wrap: anywhere; }
   .case-summary { margin-top: 18px; font-size: 16px; }
   .case-hero-art.project-art { height: 88vw; min-height: 290px; max-height: 390px; margin: 28px 0 32px; }
   .case-hero-art .analytics-window { top: 13%; left: 5%; width: 82%; height: 72%; }
@@ -74,6 +79,7 @@
   .case-point { min-height: 0; padding: 15px; }
   .case-point span { margin-bottom: 9px; }
   .arivax-panel { left: 5%; bottom: 6%; width: 70%; padding: 15px; }
+  .arivax-nav { gap: 16px; flex-wrap: wrap; }
   .case-end { padding-top: 44px; }
   .case-end h2 { font-size: 38px; }
   .case-pagination a { max-width: 46%; font-size: 12px; }
